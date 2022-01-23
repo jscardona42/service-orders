@@ -18,7 +18,7 @@ export class TechniciansService {
 
   async getTechnicians(): Promise<Technician[]> {
     return this.techniciansRepository.createQueryBuilder("technician")
-      .select(["Technician.full_name", "Technician.email", "Technician.email"]).execute();
+      .select(["Technician.full_name", "Technician.email", "Technician.technician_id"]).execute();
   }
 
   async getTechniciansIds(): Promise<Technician[]> {
