@@ -22,6 +22,10 @@ export class Order {
     @ApiProperty()
     description: string;
 
+    @Column()
+    @ApiProperty()
+    order_date: Date;
+
     @JoinColumn({ name: "client_id" })
     @ApiProperty({ type: () => Client })
     @ManyToOne(() => Client, (client: Client) => client.orders)
