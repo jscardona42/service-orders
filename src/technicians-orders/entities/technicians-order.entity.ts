@@ -1,6 +1,6 @@
 import { ApiProperty } from "@nestjs/swagger";
-import { Order } from "src/orders/entities/order.entity";
-import { Technician } from "src/technicians/entities/technician.entity";
+import { Order } from "../../orders/entities/order.entity";
+import { Technician } from "../../technicians/entities/technician.entity";
 import { Column, Entity, JoinColumn, ManyToOne, PrimaryGeneratedColumn } from "typeorm";
 
 export enum Status {

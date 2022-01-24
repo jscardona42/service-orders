@@ -1,5 +1,5 @@
 import { ApiProperty } from "@nestjs/swagger";
-import { TechniciansOrder } from "src/technicians-orders/entities/technicians-order.entity";
+import { TechniciansOrder } from "../../technicians-orders/entities/technicians-order.entity";
 import { Column, Entity, OneToMany, PrimaryGeneratedColumn } from "typeorm";
 
 @Entity()

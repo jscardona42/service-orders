@@ -2,19 +2,29 @@ import { Test, TestingModule } from '@nestjs/testing';
 import { TechniciansOrdersController } from './technicians-orders.controller';
 import { TechniciansOrdersService } from './technicians-orders.service';
 
-describe('TechniciansOrdersController', () => {
-  let controller: TechniciansOrdersController;
+describe("TechnicianOrdersController Unit Tests", () => {
+  let techniciansOrdersController: TechniciansOrdersController;
+  let spyService: TechniciansOrdersService
 
-  beforeEach(async () => {
-    const module: TestingModule = await Test.createTestingModule({
+  beforeAll(async () => {
+    const ApiServiceProvider = {
+      provide: TechniciansOrdersService,
+      useFactory: () => ({
+        getTechnicianOrderByTechnicianId: jest.fn(() => []),
+      })
+    }
+    const app: TestingModule = await Test.createTestingModule({
       controllers: [TechniciansOrdersController],
-      providers: [TechniciansOrdersService],
+      providers: [TechniciansOrdersService, ApiServiceProvider],
     }).compile();
 
-    controller = module.get<TechniciansOrdersController>(TechniciansOrdersController);
-  });
+    techniciansOrdersController = app.get<TechniciansOrdersController>(TechniciansOrdersController);
+    spyService = app.get<TechniciansOrdersService>(TechniciansOrdersService);
+  })
 
-  it('should be defined', () => {
-    expect(controller).toBeDefined();
-  });
+  it("calling getTechnicianOrderByTechnicianId method", () => {
+    const id: string = "1";
+    techniciansOrdersController.getTechnicianOrderByTechnicianId(id);
+    expect(spyService.getTechnicianOrderByTechnicianId).toHaveBeenCalled();
+  })
 });

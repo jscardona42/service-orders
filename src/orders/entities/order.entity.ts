@@ -1,6 +1,6 @@
 import { ApiProperty } from "@nestjs/swagger";
-import { Client } from "src/clients/entities/client.entity";
-import { TechniciansOrder } from "src/technicians-orders/entities/technicians-order.entity";
+import { Client } from "../../clients/entities/client.entity";
+import { TechniciansOrder } from "../../technicians-orders/entities/technicians-order.entity";
 import { Column, Entity, JoinColumn, ManyToOne, OneToMany, PrimaryGeneratedColumn } from "typeorm";
 
 export enum OrderType {

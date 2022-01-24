@@ -1,7 +1,7 @@
 import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
-import { ClientsService } from 'src/clients/clients.service';
-import { TechniciansService } from 'src/technicians/technicians.service';
+import { ClientsService } from '../clients/clients.service';
+import { TechniciansService } from '../technicians/technicians.service';
 import { Repository } from 'typeorm';
 import { CreateOrderDto } from './dto/order.dto';
 import { Order } from './entities/order.entity';

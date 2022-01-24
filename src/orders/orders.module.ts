@@ -8,7 +8,7 @@ import { Technician } from 'src/technicians/entities/technician.entity';
 import { JwtModule } from '@nestjs/jwt';
 import { PassportModule } from '@nestjs/passport';
 import { ConfigModule } from '@nestjs/config';
-import { ClientsService } from 'src/clients/clients.service';
+import { ClientsService } from '../clients/clients.service';
 import { Client } from 'src/clients/entities/client.entity';
 
 @Module({

@@ -1,7 +1,6 @@
 import { ApiProperty } from "@nestjs/swagger";
-import { IsDate, IsDateString, IsNotEmpty, IsString } from "class-validator";
-import { Client } from "src/clients/entities/client.entity";
-import { isDataView } from "util/types";
+import { IsNotEmpty } from "class-validator";
+import { Client } from "../../clients/entities/client.entity";
 import { OrderType } from "../entities/order.entity";
 
 export class CreateOrderDto {
